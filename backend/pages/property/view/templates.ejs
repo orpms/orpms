@@ -1,0 +1,60 @@
+<!-- HANDLEBAR TEMPLATES -->
+<script id="view-property-list-row-template" type="text/x-handlebars-template">
+    <div id="{{_id}}" class="js-list-row list-row card" data-filter-values="{{name}},{{status}}">
+        <div class="list-col">
+            {{#if available}}
+                <div class="list-label js-list-value text-success "><%= t('Available') %></div>
+            {{else}}
+                <div class="list-label js-list-value ">{{i18next key='Leased by' name=occupantLabel}}</div>
+            {{/if}}
+            <div class="clearfix">
+                <div class="list-avatar-col pull-left">
+                    {{Image cssClass='fa-2x'}}
+                </div>
+                <div class="pull-left">
+                    <div class="list-title js-list-value">{{name}}</div>
+                </div>
+            </div>
+            <div class="list-label">
+                {{propertyName}}
+                {{#if surface}}
+                    <span>{{formatSurface surface}}</span>
+                {{/if}}
+            </div>
+        </div>
+        <div class="list-col">
+            <div class="list-label clearfix">
+                <div class="pull-left"><%= t('Rent with CAM fees') %></div>
+            </div>
+            <div class="list-payment-price text-right">{{formatMoney priceWithExpenses}}</div>
+            <div class="list-label clearfix">
+                <div class="pull-left"><%= t('Rent without CAM fees') %></div>
+                <div class="pull-right">{{formatMoney price}}</div>
+            </div>
+        </div>
+        <div class="list-selection-overlay"></i></div>
+    </div>
+</script>
+
+<script id="view-property-list-content-template" type="text/x-handlebars-template">
+    {{#each rows}}
+        {{> view-property-list-row-template}}
+    {{/each}}
+</script>
+
+<script id="view-property-selected-list-template" type="text/x-handlebars-template">
+    {{#each rows}}
+        <a href="#" id="{{_id}}" data-id="remove-item-from-selection" class="list-group-item js-user-action">
+            <div class="clearfix">
+                <div class="pull-left">{{name}}</div>
+                <div class="pull-right fa fa-times text-right"></div>
+            </div>
+            {{#if surface}}
+                <div><small>{{formatMoney priceWithExpenses}} <%= t('ICAMEVAT') %> - {{formatSurface surface}}</small></div>
+            {{else}}
+                <div><small>{{formatMoney priceWithExpenses}} <%= t('ICAMEVAT') %></small></div>
+            {{/if}}
+        </a>
+    {{/each}}
+</script>
+<!-- /HANDLEBAR TEMPLATE -->

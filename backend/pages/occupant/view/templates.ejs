@@ -1,0 +1,56 @@
+<!-- HANDLEBAR TEMPLATES -->
+<script id="view-occupant-list-row-template" type="text/x-handlebars-template">
+    <div id="{{_id}}" class="js-list-row list-row card" data-filter-values="{{name}},{{status}}">
+        <div class="list-col">
+            {{#if terminated}}
+            <div class="list-label js-list-value text-danger hidden-xs"><%= t('Lease terminated') %></div>
+            {{else}}
+            <div class="list-label js-list-value text-success hidden-xs"><%= t('Lease in progress') %></div>
+            {{/if}}
+            <div class="clearfix">
+                <div class="list-avatar-col pull-left">
+                    {{#if isCompany}}
+                        <i class="fa fa-group fa-2x"></i>
+                    {{else}}
+                        <i class="fa fa-user fa-2x"></i>
+                    {{/if}}
+                </div>
+                <div class="list-title js-list-value pull-left">
+                    {{name}}
+                </div>
+            </div>
+        </div>
+        <div class="list-col">
+            <div><%= t('Lease contract') %></div>
+            <div>
+                {{#if terminationDate}}
+                    {{formatDate beginDate}} <i class="fa fa-long-arrow-right"></i> {{formatDate terminationDate}}
+                {{else}}
+                    {{formatDate beginDate}} <i class="fa fa-long-arrow-right"></i> {{formatDate endDate}}
+                {{/if}}
+            </div>
+            <div>
+                {{#each properties}}
+                    <div>{{Image property.type}} {{propertyName property.type}}</div>
+                {{/each}}
+            </div>
+        </div>
+        <div class="list-selection-overlay"></div>
+    </div>
+</script>
+
+<script id="view-occupant-list-content-template" type="text/x-handlebars-template">
+    {{#each rows}}
+        {{> view-occupant-list-row-template}}
+    {{/each}}
+</script>
+
+<script id="view-occupant-selected-list-template" type="text/x-handlebars-template">
+    {{#each rows}}
+        <a href="#" id="{{_id}}" data-id="remove-item-from-selection" class="list-group-item clearfix js-user-action">
+            <div class="pull-left">{{name}}</div>
+            <div class="pull-right fa fa-times text-right"></div>
+        </div>
+    {{/each}}
+</script>
+<!-- /HANDLEBAR TEMPLATE -->

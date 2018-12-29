@@ -1,0 +1,11 @@
+<%
+var min = '';
+if (config.productive) {
+    min = '.min';
+}
+%>
+<head>
+    <meta charset="utf-8" />
+    <title>Loca</title>
+    <link rel="stylesheet" href="/public/css/print<%=min%>.css">
+</head>

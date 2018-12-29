@@ -1,0 +1,31 @@
+<div id='<%= viewId %>' class='view'>
+    <div class='container'>
+        <div class="row">
+            <% if (typeof topMenu != 'undefined') { %>
+                <div class="col-xs-12">
+                    <%- include(topMenu) %>
+                </div>
+            <% } %>
+
+            <% if (typeof rightMenu != 'undefined') { %>
+                <div class="col-xs-8">
+                    <%- include(content) %>
+                </div>
+
+                <div id='right-menu-pane' class="col-xs-4">
+                    <%- include(rightMenu) %>
+                </div>
+            <% } else { %>
+                <div class="col-xs-12">
+                    <%- include(content) %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<!-- HANDLEBAR TEMPLATES -->
+<% if (typeof templates != 'undefined') { %>
+<%- include(templates) %>
+<% } %>
+<!-- /HANDLEBAR TEMPLATES -->

@@ -1,0 +1,73 @@
+<div class="js-filterbar js-side-menu side-menu card" data-id="rents-menu">
+    <h4><%= t('Period') %></h4>
+    <button type="button" class="btn btn-default btn-block js-user-action js-rent-period" role="button"></button>
+    <div class="js-month-picker month-picker" class="hidden"></div>
+
+    <h4><%= t('Status') %></h4>
+    <button type="button" class="btn btn-default btn-block js-default-filter js-user-action" data-id="list-filter" data-toggle="button" role="button">
+        <div class="clearfix">
+            <div class="pull-left">
+                <%= t('All') %> <span class="js-all-filter-label text-muted"></span>
+            </div>
+            <div class="pull-right">
+                <span class="text-right js-total-topay"></span>
+            </div>
+        </div>
+    </button>
+    <button type="button" class="btn btn-default btn-block js-user-action" data-id="list-filter" data-value="paid,partialypaid" data-toggle="button" role="button">
+        <div class="clearfix">
+            <div class="pull-left">
+                <%= t('Paid') %> <span class="js-paid-filter-label text-muted"></span>
+            </div>
+            <div class="pull-right">
+                <span class="js-total-paid text-success strong"></span>
+            </div>
+        </div>
+    </button>
+    <button type="button" class="btn btn-default btn-block js-user-action" data-id="list-filter" data-value="notpaid" data-toggle="button" role="button">
+        <div class="clearfix">
+            <div class="pull-left">
+                <%= t('Not paid') %> <span class="js-not-paid-filter-label text-muted"></span>
+            </div>
+            <div class="pull-right">
+                <span class="js-total-notpaid text-danger strong"></span>
+            </div>
+        </div>
+    </button>
+</div>
+
+<div class="js-side-menu side-menu card" data-id="rents-selection-menu">
+    <h4 class="js-rent-period"></h4>
+    <button type="button" class="btn btn-default btn-block js-user-action js-cancel-selection" role="button"><i class="fa fa-reply"></i> <%= t('Cancel selection') %></button>
+    <button type="button" data-id="list-action-pay-rent" class="btn btn-default btn-block js-user-action js-only-mono-selection" role="button"><i class="fa fa-credit-card"></i> <%= t('Payment') %></button>
+    <button type="button" data-id="list-action-rents-history" class="btn btn-default btn-block js-user-action js-only-mono-selection" role="button"><i class="fa fa-history"></i> <%= t('Timeline rents') %></button>
+    <button type="button" data-id="list-action-print" class="btn btn-default btn-block js-user-action" role="button"><i class="fa fa-print"></i> <%= t('Print') %></button>
+    <button type="button" data-id="list-action-email" class="btn btn-default btn-block js-user-action" role="button"><i class="fa fa-envelope-o"></i> <%= t('Email') %></button>
+    <h4 class="js-list-selection-menu-label"></h4>
+    <div class="js-list-selected-elements list-group list-group-selection"></div>
+</div>
+
+<div class="js-side-menu side-menu card" data-id="pay-rent-form-menu" data-target="#pay-rent-form">
+    <button type="button" class="btn btn-default btn-block js-user-action js-cancel-form" role="button"><i class="fa fa-reply"></i> <%= t('Cancel') %></button>
+    <button data-id="list-action-save-form" type="button" class="btn btn-default btn-block js-user-action" role="button"><i class="fa fa-save"></i> <%= t('Save') %></button>
+    <h4 class="js-list-selection-menu-label"></h4>
+    <div class="js-list-selected-elements fixed list-group"></div>
+</div>
+
+<div class="js-side-menu side-menu card"  data-id="rents-history-menu" data-target="#rents-history">
+    <button type="button" class="btn btn-default btn-block js-user-action js-cancel-form" role="button"><i class="fa fa-reply"></i> <%= t('Cancel') %></button>
+</div>
+
+<div class="js-side-menu side-menu card"  data-id="print-doc-selector-menu" data-target="#print-doc-selector">
+    <h4 class="js-rent-period"></h4>
+    <button type="button" class="btn btn-default btn-block js-user-action js-cancel-form" role="button"><i class="fa fa-reply"></i> <%= t('Cancel') %></button>
+    <h4 class="title-card js-list-selection-menu-label"></h4>
+    <div class="js-list-selected-elements fixed list-group"></div>
+</div>
+
+<div class="js-side-menu side-menu card"  data-id="email-doc-selector-menu" data-target="#email-doc-selector">
+    <h4 class="js-rent-period"></h4>
+    <button type="button" class="btn btn-default btn-block js-user-action js-cancel-form" role="button"><i class="fa fa-reply"></i> <%= t('Cancel') %></button>
+    <h4 class="title-card js-list-selection-menu-label"></h4>
+    <div class="js-list-selected-elements fixed list-group"></div>
+</div>
