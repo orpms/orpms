@@ -1,0 +1,9 @@
+!backend
+!bkp
+!config
+!frontend
+!scripts
+!test
+!package-lock.json
+!package.json
+!server.js
