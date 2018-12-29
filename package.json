@@ -1,5 +1,5 @@
 {
-  "name": "loca",
+  "name": "orpms",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -14,8 +14,8 @@
     "watch:img": "nodemon -e png,jpg -w frontend/images scripts/build.js img",
     "builddev": "node scripts/build.js static",
     "lint": "eslint .",
-    "test": "LOCA_DEMOMODE=false LOCA_PRODUCTIVE=true mocha",
-    "coverage": "LOCA_DEMOMODE=false LOCA_PRODUCTIVE=true nyc --reporter=lcov --reporter=text-summary mocha",
+    "test": "ORPMS_DEMOMODE=false ORPMS_PRODUCTIVE=true mocha",
+    "coverage": "ORPMS_DEMOMODE=false ORPMS_PRODUCTIVE=true nyc --reporter=lcov --reporter=text-summary mocha",
     "mongodump": "node scripts/mongodump.js",
     "mongorestore": "node scripts/mongorestore.js"
   },
