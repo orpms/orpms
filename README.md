@@ -20,32 +20,27 @@ The idea is to make easy the management of properties and occupants by proposing
  - Follow the rent payments month by month
  - Template letters for recovery of not paid rents
 
-![Loca](http://www.nuageprive.fr/images/loca-sample.png "Open source real estate management")
-
-[Check out the live demo.](http://demo.nuageprive.fr/)
 
 ## Getting started
 
-Follow instructions from [here](https://github.com/microrealestate/microrealestate#getting-started)
+Coming Soon
 
-Technical Stack
----------------
-
-Back-end:
-
-Node, Express, MongoDB, EJS (templates), PassportJS (authentication)
-
-Front-End:
-
-JQuery, Bootstrap, Handlebars, and [frontexpress](https://github.com/camelaissani/frontexpress)
-
-Build system based on RollupJS
+## Technical Stack
 
 
-Why I created this application?
--------------------------------
-Simply to help my best friend and I to manage properties that we rent.
+### Back-end:
+* Node
+* Express
+* MongoDB 
+* EJS (templates)
+* PassportJS (authentication)
 
-Above all, to have a good reason to play with node and javascript :-)
+### Front-End:
+* JQuery
+* Bootstrap
+* Handlebars
+* frontexpress
 
+### Build system 
+ * RollupJS
 
